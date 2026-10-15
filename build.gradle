@@ -19,7 +19,11 @@ repositories {
 dependencies {
     implementation platform('org.springframework.boot:spring-boot-dependencies:4.1.1')
 
+    // Compile-time only dependencies so this project stays a lightweight library
+    compileOnly 'org.springframework.boot:spring-boot-starter-web'
     compileOnly 'org.springframework.boot:spring-boot'
+    compileOnly 'jakarta.servlet:jakarta.servlet-api' // version managed by BOM
+    compileOnly 'org.slf4j:slf4j-api' // version managed by BOM
 
     testImplementation platform('org.junit:junit-bom:5.10.0')
     testImplementation 'org.junit.jupiter:junit-jupiter'
